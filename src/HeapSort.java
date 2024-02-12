@@ -1,5 +1,3 @@
-import java.util.Queue;
-
 public class HeapSort<E extends Comparable<E>> {
     private final MinHeap<E> minHeap = new MinHeap<>();
     // a sort algorithm using my min heap. not that elegant!
