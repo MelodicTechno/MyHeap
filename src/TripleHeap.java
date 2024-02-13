@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class TripleHeap<E extends Comparable<E>> {
+public class TripleHeap<E extends Comparable<E>> extends MinHeap<E> {
     // using an array to implement triple tree
     private final ArrayList<E> heap;
     // constructor
@@ -89,8 +89,5 @@ public class TripleHeap<E extends Comparable<E>> {
         E NodeForStore = heap.get(index1);
         heap.set(index1, heap.get(index2));
         heap.set(index2, NodeForStore);
-    }
-    public ArrayList<E> getHeap() {
-        return heap;
     }
 }
