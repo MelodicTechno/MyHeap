@@ -7,7 +7,7 @@ public class InsertionSort<E extends Comparable<E>> {
     }
     public void sort() {
         for (int i = 1; i < dataToBeSorted.size(); i++) {
-            for (int j = i; j > 0 && dataToBeSorted.get(j).compareTo(dataToBeSorted.get(j - 1)) > 0; j--) {
+            for (int j = i; j > 0 && dataToBeSorted.get(j).compareTo(dataToBeSorted.get(j - 1)) < 0; j--) {
                 swap(j, j - 1);
             }
         }
