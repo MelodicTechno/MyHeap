@@ -14,7 +14,7 @@ public class MinHeap<E extends Comparable<E>> {
     }
 
     public boolean isEmpty() {
-        return heap.isEmpty();
+        return !heap.isEmpty();
     }
     // insertion method add elements
     public void insert(E element) {
