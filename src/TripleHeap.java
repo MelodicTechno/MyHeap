@@ -93,37 +93,4 @@ public class TripleHeap<E extends Comparable<E>> {
     public ArrayList<E> getHeap() {
         return heap;
     }
-    // rearrange the 3 nodes
-    public void rearrange(int index) {
-        int parentIndex = getParentIndex(index);
-        int leftSisterIndex = getLeftIndex(parentIndex);
-        int midSisterIndex = getMidIndex(parentIndex);
-        int rightSisterIndex = getRightIndex(parentIndex);
-        ArrayList<E> sisters = new ArrayList<>();
-        if (leftSisterIndex > 0 && leftSisterIndex < heap.size()) {
-            sisters.add(heap.get(leftSisterIndex));
-        }
-        if (midSisterIndex > 0 && midSisterIndex < heap.size()) {
-            sisters.add(heap.get(midSisterIndex));
-        }
-        if (rightSisterIndex > 0 && rightSisterIndex < heap.size()) {
-            sisters.add(heap.get(rightSisterIndex));
-        }
-        if (sisters.size() == 1) {
-            heap.set(leftSisterIndex, sisters.get(0));
-        }
-        if (sisters.size() == 2) {
-            InsertionSort<E> insertionSort = new InsertionSort<>(sisters);
-            insertionSort.sort();
-            heap.set(leftSisterIndex, sisters.get(0));
-            heap.set(midSisterIndex, sisters.get(1));
-        }
-        if (sisters.size() == 3) {
-            InsertionSort<E> insertionSort = new InsertionSort<>(sisters);
-            insertionSort.sort();
-            heap.set(leftSisterIndex, sisters.get(0));
-            heap.set(midSisterIndex, sisters.get(1));
-            heap.set(rightSisterIndex, sisters.get(2));
-        }
-    }
 }
