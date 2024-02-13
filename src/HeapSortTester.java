@@ -8,6 +8,7 @@ public class HeapSortTester {
         double end = System.nanoTime();
         return Math.log(end - start);
     }
+    // the average time of T times test
     public static double test(HeapSort<Double> alg, Double[] numbers, int T) {
         Double[] cpy = Arrays.copyOf(numbers, numbers.length);
         double totalTime = 0;
@@ -19,6 +20,7 @@ public class HeapSortTester {
         int[] dataLength = {100, 1000};
         double[] elapsedTime = new double[dataLength.length];
         HeapSort<Double> heapSort = new HeapSort<>();
+
         System.out.println("Sort random data:");
         for(int j = 0; j < dataLength.length; j++) {
             elapsedTime[j] = test(heapSort, GenerateData.getRandomData(dataLength[j]), 5);
@@ -26,19 +28,21 @@ public class HeapSortTester {
         System.out.println("run time");
         for(double time: elapsedTime)
             System.out.printf("%6.4f \n", time);
+
         System.out.println("Sort sorted data");
         for(int j = 0; j < dataLength.length; j++) {
-
             elapsedTime[j] = test(heapSort, GenerateData.getSortedData(dataLength[j]), 5);
         }
         System.out.println("run time");
         for(double time: elapsedTime) {
             System.out.printf("%6.4f \n", time);
         }
+
         System.out.println("Sort inverse data:");
         for(int j = 0; j < dataLength.length; j++) {
             elapsedTime[j] = test(heapSort, GenerateData.getReversedData(dataLength[j]), 5);
         }
+
         System.out.println("run time");
         for(double time: elapsedTime) {
             System.out.printf("%6.4f \n", time);
