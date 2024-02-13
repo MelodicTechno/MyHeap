@@ -13,7 +13,7 @@ public class MinHeapTester {
         }
         System.out.println(minHeap.peek());
         System.out.println();
-        while (minHeap.isEmpty()) {
+        while (!minHeap.isEmpty()) {
             sortedResult.offer(minHeap.delete());
         }
         System.out.println(sortedResult);
