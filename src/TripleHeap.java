@@ -18,7 +18,6 @@ public class TripleHeap<E extends Comparable<E>> {
     public void insert(E element) {
         heap.add(element);
         upHeapify(heap.size() - 1);
-        // rearrange(heap.size() - 1);
     }
 
     // heapification from index i
@@ -109,6 +108,9 @@ public class TripleHeap<E extends Comparable<E>> {
         }
         if (rightSisterIndex > 0 && rightSisterIndex < heap.size()) {
             sisters.add(heap.get(rightSisterIndex));
+        }
+        if (sisters.size() == 1) {
+            heap.set(leftSisterIndex, sisters.get(0));
         }
         if (sisters.size() == 2) {
             InsertionSort<E> insertionSort = new InsertionSort<>(sisters);
