@@ -54,10 +54,10 @@ public class MinHeap<E extends Comparable<E>> {
     // deletion of heap
     public E delete() {
         // if empty
-        if (heap.isEmpty()) {
+        if (this.heap.isEmpty()) {
             throw new IndexOutOfBoundsException();
         }
-        swap(0, heap.size() - 1);
+        swap(0, this.heap.size() - 1);
         E removedElement = heap.remove(heap.size() - 1);
         downHeapify(0);
         return removedElement;

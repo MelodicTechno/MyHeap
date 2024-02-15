@@ -17,7 +17,7 @@ public class HeapSortTester {
         return totalTime/T;
     }
     public static void main(String[] args) {
-        int[] dataLength = {100, 1000};
+        int[] dataLength = {10000000};
         double[] elapsedTime = new double[dataLength.length];
         HeapSort<Double> heapSort = new HeapSort<>();
 
