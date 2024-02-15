@@ -17,5 +17,8 @@ public class MinHeapTester {
             sortedResult.offer(minHeap.delete());
         }
         System.out.println(sortedResult);
+        if (minHeap.isEmpty()) {
+            System.out.println("the heap is empty");
+        }
     }
 }
